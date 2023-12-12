@@ -15,5 +15,4 @@ COPY --from=builder /app/node_modules ./node_modules
 RUN npm prune --production
 USER node
 COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/.env ./.env
 CMD [ "node", "dist/server.js" ]
